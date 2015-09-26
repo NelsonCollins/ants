@@ -1,0 +1,255 @@
+def post_params
+		params.require(:post).permit(:title, :content, :image)
+		
+	end
+
+	show.html
+	<p><%=@post.image %> </p>
+
+	db
+	t.string :image_uid
+      t.string :image_name
+
+      _form
+      <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  </div>
+
+  class: "img-thumbnail"
+
+   <div class="field">
+    <%= f.label :occupation %><br />
+    <%= f.select(:status_type, options_for_select([['Doctor','Doctor'],['Farmer','Farmer'],['Extension worker','Extension worker']])) %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state, autofocus: true %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :local_government %><br />
+    <%= f.text_government_field :local_government, autofocus: true %>
+  </div>
+
+   <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address, autofocus: true %>
+
+    <div class="field">
+    <%= f.label :occupation %><br />
+    <%= f.select(:status_type, options_for_select([['Doctor','Doctor'],['Farmer','Farmer'],['Extension worker','Extension worker']])) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Gender %><br />
+    <%= f.select(:gender_type, options_for_select([['Male','Male'],['Female','Female']])) %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state, required:true ,autofocus: true %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :local_government %><br />
+    <%= f.text_field :local_government, required:true , autofocus: true %>
+  </div>
+
+   <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address, required:true , autofocus: true %>
+  </div>
+
+
+
+<%=link_to "sign out", destroy_user_session_path%>
+
+
+<%@post.each do |post| %>
+
+  <td "100%" align="center"><center><%=image_tag(post.image.url,:size =>'250x250') %></center></td>
+   <div class="post">
+  <div class="title"><h3><%=link_to post.title, post%></h3>
+  </div>
+  <div class="date"><p>Published at
+
+    <%=time_ago_in_words(post.created_at) %>
+      
+      by
+
+      <%=post.user.email%>
+      </p>
+    </div>
+  </div>
+
+<%end%>
+
+
+
+<div id="advert"> <table align="left"><tr> <td width="250"> Place your Adverts here<br/><br/>
+<%=image_tag @post.photo.url, :size =>'250x250' %>   <% if @post.image_stored %>
+
+<%end%>
+</td></tr></table></div>
+<br/>
+
+<div class="container"><table width="50%" align="center">
+<p></h1></p><br/><br/>
+
+
+<p id="notice"><%= notice %></p>
+<tr>
+ 
+  <td><strong><%=@post.title%></strong>
+  <p><%=@post.content%></p>
+
+  <td width="20%" align="center">
+  <%=image_tag @post.image.url, :size =>'210x210' %>
+<% if @post.image_stored %>
+<%end%>
+</td>
+</tr>
+<tr>
+  <td><h4>
+    <%=@post.comments.count%> Comments</h4>
+    <%=render @post.comments %>
+    <h4>Reply to thread</h4>
+    <%=render "comments/form" %>
+  <% if current_user && @post.user_id == current_user.id then%>
+  
+  <tr>
+<td>
+
+  <%=link_to "Edit",edit_post_path(@post)%>
+<%=link_to "Delete", post_path(@post), method: :delete, data: {confirm:"Are you sure you want to do this"} %></td>
+<%end%>
+<%=link_to "Home", root_path %></div>
+</tr>
+
+
+    
+
+    .container{
+  width: 60%;
+  max-width: 1140px;
+  margin: 0 auto;
+ 
+ 
+ }
+
+ .clearfix:before, .clearfixafter{
+  content: "";
+  display: table;
+ }
+
+  .clearfix:after{
+    clear:both;
+ }
+
+ .header {
+  width: 100%;
+  margin: 0 auto;
+  background-color:white;
+}
+  #logo {
+
+    float: left;
+    text-transform: uppercase;
+  }
+  p{
+    padding-top: 20px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    font-size:1.2rem;
+    text-decoration: none;
+    color: #397CAC;
+  }
+  #buttons {
+    float: right;
+  }
+  a{
+    margin-top: 20px;
+    line-height: 40px;
+    background:white;
+    border-radius: .25em;
+    text-decoration: none;
+    font-weight: 100;
+    margin:  1px;
+    }
+
+  #posts{
+  background: white;
+  padding: 2em 5%;
+  border-radius: .5em;
+}
+
+.post{
+ margin: 1em 0;
+ padding: 1em 0;
+ border-bottom: 1px solid #D1d1d1;
+}
+
+.title{
+ margin: 0;
+}
+ a{
+ color: #397CAC;
+ text-decoration:none;
+ font-weight: 100;
+ font-size: 1.25rem;
+ }
+ 
+ .date {
+ margin-top: .25rem;
+ font-size: 0.9rem;
+ color:#B2BAC2;
+ 
+ }
+ 
+ #post_content {
+ width: 90%;
+ background: white;
+ padding: 2em 5%;
+ border-radius: .5em;
+}
+h1{
+ 
+ font-weight: 100;
+ font-size: 2em;
+ color: #397CAC;
+ margin-top: 0;
+
+}
+p{
+  color:#B2BAC2;
+
+  .container {
+  margin: 80px auto;
+  width: 640px;
+}
+
+.main{
+  width:80%;
+  margin-right: 100px;
+  margin: 0 auto;
+  line-height:20px;
+  font-style: italic;
+  padding-left: 3px;
+  padding-right: 3px;
+  padding-top: 3px;
+  float: right;
+  color: #404040;
+  
+ }
+
+ body {
+  font: 13px/20px 'Lucida Grande', Tahoma, Verdana, sans-serif;
+  color: #404040;
+
+  }

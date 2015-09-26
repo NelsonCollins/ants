@@ -1,0 +1,97 @@
+/** body {
+	background-color:#99CC99;
+} 
+
+
+
+.container{
+ 	width: 90%;
+ 	max-width: 950px;
+ 	margin: 0 auto;
+ 	background-color: white;
+ 	border-radius: .4em;
+ 	font-size: 15px;
+ 	line-height:20px;
+ 	font-style: italic;
+  margin-right:100px; 
+  padding-left: 3px;
+  padding-right: 3px;
+  padding-top: 3px;
+ }
+ .header{
+ 	 width: 100%;
+  line-height: 50px;
+  background-color: white;
+  text-align: center;
+  font-size: 30px;
+  border-radius: .5em;
+  margin-bottom: 10px;
+  padding-top: 5px;
+  padding-left: 5px;
+
+ }
+ .logo{
+ 	
+ 	text-align: left;
+  font-size: 30px;
+  border-radius: .5em;
+  text-decoration: none;
+
+ }
+ .logo a{
+ padding-top: 20px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    font-size:1.2rem;
+    text-decoration: none;
+    color: #336633 ;
+ }
+
+
+ .buttons {
+    float: right;
+  }
+
+  .buttons a{
+    color:white ;
+    background:#336633 ;
+    border-radius: .25em;
+     text-decoration: none;
+    font-weight: 100;
+    font-size: 20px;
+    margin:  1px;
+  }
+
+  .buttons a:hover{
+    color:white ;
+    background:#66CC00;
+    font-weight: bolder;
+  }
+
+  a{
+    /*margin-top: 20px;
+    line-height: 40px;
+    background:white;
+    border-radius: .25em;
+    text-decoration: none;
+    font-weight: 100;
+    font-size: 15px;
+    margin:  1px;
+   /* text-decoration: none;
+    }*/
+
+   /* #left{
+      float: left;
+      margin-left: 2px;
+      width: 20%;
+    }
+ 
+    .advert{
+      background-color: #336633;
+      border-radius: 1em;
+      padding-left: 3px;
+      padding-bottom: 3px*/;
+     /* padding-top: 3px;
+      
+    }
+ */*/*/

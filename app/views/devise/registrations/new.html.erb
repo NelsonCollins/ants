@@ -1,0 +1,38 @@
+
+<div class="main_container-fluid">      
+  <div class="container" align="center">
+    <div class="image" align="center">
+      <%=image_tag 'j.png', :size => '750x300'%>
+    </div>
+      <hr/>
+    <div class="show">  
+      <div class="login"><h1>Sign up</h1>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+          <div class="field">
+            <%= f.email_field :email, autofocus: true ,:placeholder =>"Username or Email"%>
+          </div>
+            <br/>
+          <div class="field">
+            <% if @validatable %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "off", :placeholder =>"Password"%>
+          </div><br/>
+          <div class="field">
+            <%= f.password_field :password_confirmation, autocomplete: "off",:placeholder =>"password confirmation"%>
+          </div><br/>
+          <div class="actions">
+            <%= f.submit "Sign up" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+  </div>           
+</div>
+            
+                

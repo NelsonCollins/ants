@@ -1,0 +1,49 @@
+
+
+<div class="main_container-fluid">
+  <div class="row">
+    <div class="col-sm-3 col-md-2 sidebar">
+      <div class="thumbnail">
+        <div class="caption">
+					 <%= notice %>
+					<strong> <center>Learn Agriculture</center></strong><br/><%= @post.advert%>
+				</div>
+			</div>
+		</div>
+		<div class="container" align="center">
+		  <div class="col-md-12 "align="center">          
+        <div class="image">
+         	<%=image_tag 'd.jpg', :size => '760x300'%>
+        </div>
+          <hr/>
+		  	<div class="show">	       		 	
+					<strong><%= @post.title %></strong> <br/> 
+					<div align="left"><p style="justify"><%= @post.content %></p></div>
+		 			<p style="justify"><%= if @post.image  then
+					image_tag @post.image.url, :size =>'180x180' 
+					end%></p>
+				<div id="comment_author">Published at 
+					<%=time_ago_in_words(@post.created_at)%> by
+					
+					<%=link_to @post.user.email, profile_path%>
+					
+					
+				</div>
+					<br/>
+	 				<hr/>
+				<div align="left">
+					<h5><%=@post.comments.count%> Comments</h5>
+					<%=render @post.comments %>
+					<hr/>
+					<h5>Post a comment</h5>
+					<%=render "comments/form" %>
+					<% if current_user && @post.user_id == current_user.id then%>
+					<%= link_to 'Edit', edit_post_path(@post),  method: :delete, data: {confirm:"Are you sure you want to do this"} %>
+					<%= link_to 'Profile Page',profile_path %>
+					<%= link_to 'Delete', post_path %></td>
+				<%end%>	
+				</div>	
+			</div>	
+		</div>			
+	</div>
+</div>

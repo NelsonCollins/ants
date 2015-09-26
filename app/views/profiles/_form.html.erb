@@ -1,0 +1,43 @@
+<br/>
+<div class="main_container-fluid">
+	<div class="container" align="center">
+		<%=form_for @profile do |f| %>
+			<br/>
+		<div class="field">
+		
+		<%=f.text_field :title,  :placeholder =>"Title"%></div>
+		<div class="field">
+		
+		<%=f.text_field :firstname,  :placeholder =>"Firstname"%></div>
+		<div class="field">
+		
+		<%=f.text_field :lastname, :placeholder =>"Lastname"%></div>
+		<div class="field">
+		
+		<%=f.text_field :location, :placeholder =>"Location"%></div>
+		<div class="field">
+		
+		<%=f.text_field :occupation,  :placeholder =>"Occupation"%></div>
+		<div class="field">
+		
+		<%=f.text_field :sex,  :placeholder =>"Sex"%></div>
+		<div class="field">
+		
+		<%=f.text_field :age,  :placeholder =>"Age"%></div>
+		<div class="field">
+
+		<%=f.text_field :email_add,  :placeholder =>"Email Address"%></div><br/>
+
+
+		<div class="field">
+		    <%= f.label :profile_picture %>
+		    <%= f.file_field :pic%><br/>
+		  </div>
+		   <div class="action"><%=f.submit 'submit'%></div>
+
+		<%end  %>
+		<br/>
+		</tr>
+		</table>
+	</div>
+</div>

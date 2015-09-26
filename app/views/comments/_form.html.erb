@@ -1,0 +1,8 @@
+<%= if current_user then
+	form_for([@post, @post.comments.build]) do |f| %>
+			
+		<%=f.text_area :comment, :size => '60x5'%><br/>
+		<%=f.submit :submit %>
+	<%end%>
+<% end %>
+<br/><br/><br/><br/>

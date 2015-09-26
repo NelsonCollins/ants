@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="sample.css">
+<link rel="stylesheet", :href="cdnjs.cloudflare.com/ajax/lib/normalize/3.0.1/normalize.css">
+  <title>Pilot</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container">
+
+		<div class="main_header">
+
+			<div class="clearfix">
+
+				<div id="logo">
+					<%=link_to "Farmers Connect", root_path %>
+
+				</div>
+
+					<div id="buttons">
+					<% if %>
+
+						<%=link_to "sign in", new_user_registration_path %>
+
+						<%else%>
+						<%=link_to "sign up", new_user_session_path %>
+						<%end%>
+					
+			 		</div>
+ 			</div>
+
+
+		</div>
+	
+		<div class="content">
+			<div id="notice">
+				<p class="notice"><%= notice %></p>
+			 	<p class="alert"><%= alert %></p>
+			 
+				<%= yield %>
+			</div>
+		</div>
+</div>
+</body>
+</html>

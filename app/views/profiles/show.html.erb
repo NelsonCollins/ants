@@ -1,0 +1,45 @@
+<div class="main_container-fluid">
+	<div class="container" align="center">
+		<div align="left">
+		<table style="font-style:italic">
+		
+		<tr>
+			<td><h6>TITLE:</h6></td>       <td> <h6><%= @profile.title %></h6></td></tr>
+			<tr>
+
+			<td><h6>FIRSTNAME:</h6></td>   <td> <h6><%= @profile.firstname %></h6></td></tr>
+			<tr>
+
+			<td><h6>LASTNAME:</h6> </td>    <td><h6><%= @profile.lastname %></h6></td></tr>
+			<tr>
+			
+			<td><h6>AGE: </h6></td>        <td> <h6><%= @profile.age %></h6></td></tr>
+			<tr>
+
+			<td><h6>SEX: </h6></td>         <td><h5><%= @profile.sex %></h6></td></tr>
+
+			<td><h6>LOCATION:</h6></td>     <td><h6><%= @profile.location %></h6></td></tr>
+			<tr>
+
+			<td width="40%"><h6>OCCUPATION: </h6></td>  <td><h6><%= @profile.occupation %></h6></td></tr>
+			<tr>
+
+			<td><h6>EMAIL: </h6></td>       <td><h6><%= @profile.email_add %></h6></td></tr>
+			<tr>
+
+			
+		</table>
+		</div>
+		<div align="right">
+		<%= if @profile.pic then 
+			image_tag @profile.pic.url, :size => '150x150' end%><br/>
+		</div>
+		<br/>
+		<% if current_user && @profile.id == current_user.id then %>
+
+		<%= link_to 'Edit', edit_profile_path(@profile),  method: :delete, data: {confirm:"Are you sure you want to do this"} %>
+			
+				<%= link_to 'Submit', root_path(@post) %></td>
+			<%end%>
+	</div>
+</div>

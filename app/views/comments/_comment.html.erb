@@ -1,0 +1,10 @@
+<div class="comment">
+	<div class="comment_content"><%=comment.comment%></div>
+
+	<div id="comment_author"><%=comment.user.email%></div><br/>
+	<% if current_user && comment.user_id == current_user.id then %>
+
+		<%=link_to "Edit", edit_post_comment_path(comment.post, comment)%>
+		<%=link_to "Delete", [comment.post, comment], method: :delete, data: {confirm: "Are you sure"} %>
+	<% end %>
+</div> 

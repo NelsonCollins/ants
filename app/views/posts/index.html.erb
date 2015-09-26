@@ -1,0 +1,46 @@
+ 
+
+  <div class="advert" style="float:right" ="right"> <center>Advertise HERE</center><%=image_tag 'adv.png'%>
+  </div>    
+  <div class="main_container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar">
+        <div class="thumbnail">
+          <div class="caption">
+            <% @post.each do |post| %>
+              <strong> <center>Learn Agriculture<br/></center></strong>
+              <%= post.advert %>
+              <%=truncate post.advert, :length => 50%>
+              <%= link_to 'Read More....', post %>
+              <br/>
+              <hr/>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="container" align="right"><br/>
+        <ul class="bxslider">
+          <li><%=image_tag 'o.png', :size => '940x300'%></li>
+          <li><%=image_tag 'i.jpg', :size => '940x300'%></li>
+          <li><%=image_tag 'g.jpg', :size => '940x300'%></li>
+          <li><%=image_tag 'j.png', :size => '940x300'%></li>
+          <li><%=image_tag 'pho.jpg',:size => '940x300'%></li>
+          <li><%=image_tag '8.jpg', :size => '940x300'%></li>
+          <li><%=image_tag '4.jpg', :size => '940x300'%></li>
+          <li><%=image_tag '1.jpg', :size => '940x300'%></li>
+          <li><%=image_tag '3.jpg', :size => '940x300'%></li>
+        </ul>
+        <hr/>
+        <div class="col-sm-9 col-sm-offset-3 col-md-7 col-md-offset-2; container" >              <% @post.each do |post| %> 
+            <div align="left">
+              <strong><%= post.title %></strong><br/>
+              <%=truncate post.content, :length => 100%>
+              <%= link_to 'Read More....', post %><br/></div>
+              <strong> Published at <%=time_ago_in_words(post.created_at)%></strong>
+              <hr/>
+            <% end %>
+        </div>
+      </div> 
+    </div>     
+  </div>
+
